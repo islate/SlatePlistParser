@@ -8,10 +8,6 @@
 
 #import "SlatePlistParser.h"
 
-@interface UIButton (SlatePlistParser)
-- (void)setselectorName:(NSString *)selectorString;
-@end
-
 @implementation SlatePlistParser
 
 + (void)setPropertyWithKey:(NSString *)key value:(id)value target:(id)target
@@ -222,6 +218,20 @@
                 needAddSubView = YES;
             }
         }
+        
+        if (object == nil)
+        {
+            NSString *fallbackClassString = [itemDictionary objectForKey:@"fallbackClass"];
+            if (view && [fallbackClassString isKindOfClass:[NSString class]])
+            {
+                Class classPointer = NSClassFromString(fallbackClassString);
+                if (classPointer)
+                {
+                    object = [classPointer new];
+                    needAddSubView = YES;
+                }
+            }
+        }
     }
     
     if (object)
@@ -326,34 +336,6 @@
         }
     }
     return mutablePlistDictionary;
-}
-
-@end
-
-
-@implementation UIButton (SlatePlistParser)
-
-- (void)setselectorName:(NSString *)selectorString
-{
-    SEL selector = NSSelectorFromString(selectorString);
-    
-    if (self.allTargets.count == 0)
-    {
-        if ([self.superview respondsToSelector:selector])
-        {
-            [self addTarget:self.superview action:selector forControlEvents:UIControlEventTouchUpInside];
-        }
-        return;
-    }
-    
-    for (id target in [self.allTargets mutableCopy])
-    {
-        if ([target respondsToSelector:selector])
-        {
-            [self removeTarget:target action:NULL forControlEvents:UIControlEventAllTouchEvents];
-            [self addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
-        }
-    }
 }
 
 @end

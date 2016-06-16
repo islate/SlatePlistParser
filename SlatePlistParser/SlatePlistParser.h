@@ -6,8 +6,13 @@
 //  Copyright (c) 2014年 Modern Mobile Digital Media Company Limited. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "UIButton+plist.h"
+#import "UIImageView+plist.h"
+#import "UILabel+plist.h"
+#import "UIScrollView+plist.h"
+#import "UITableView+plist.h"
+#import "UITextView+plist.h"
+#import "UIView+plist.h"
 
 /**
  *  用plist设置视图属性的解释器
