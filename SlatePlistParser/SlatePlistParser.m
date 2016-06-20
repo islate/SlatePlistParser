@@ -3,7 +3,7 @@
 //  SlateCore
 //
 //  Created by lin yize on 14-1-23.
-//  Copyright (c) 2014年 Modern Mobile Digital Media Company Limited. All rights reserved.
+//  Copyright (c) 2014年 islate. All rights reserved.
 //
 
 #import "SlatePlistParser.h"

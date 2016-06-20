@@ -3,7 +3,7 @@
 //  SlateCore
 //
 //  Created by Xiangjian Meng on 12-8-15.
-//  Copyright (c) 2012年 Modern Mobile Digital Media Company Limited. All rights reserved.
+//  Copyright (c) 2012年 islate. All rights reserved.
 //
 
 #import "UIButton+plist.h"

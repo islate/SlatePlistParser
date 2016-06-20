@@ -3,7 +3,7 @@
 //  SlateCore
 //
 //  Created by tiezhu huang on 12-6-13.
-//  Copyright (c) 2012年 Modern Mobile Digital Media Company Limited. All rights reserved.
+//  Copyright (c) 2012年 islate. All rights reserved.
 //
 
 #import "UITableView+plist.h"
